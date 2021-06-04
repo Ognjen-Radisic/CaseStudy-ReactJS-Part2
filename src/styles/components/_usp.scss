@@ -1,0 +1,75 @@
+.usp {
+	@include flexVariant(space-between);
+	@include container();
+	flex-direction: column;
+	padding-bottom: 40px;
+
+	//for accesibility optimization it should be h2 in markup
+	//title
+	h3 {
+		font-size: $fontXXL;
+		@include respond(mobile) {
+			font-size: $fontXL;
+		}
+	}
+}
+
+.usp__paragraph {
+	text-transform: uppercase;
+	margin-top: 30px;
+	color: $darkGrey;
+	word-wrap: break-word;
+}
+.usp__title {
+	color: $primaryColor;
+	text-align: center;
+	margin-bottom: 70px;
+	padding: 0 40px;
+}
+
+.usp__grid-container {
+	display: grid;
+	grid-template-columns: repeat(2, 400px);
+	@include respond(tab-port) {
+		grid-template-columns: repeat(2, 260px);
+	}
+	@include respond(mobile) {
+		grid-template-columns: repeat(1, 250px);
+	}
+	row-gap: 20px;
+	column-gap: 50px;
+	h4 {
+		color: $primaryDarkColor;
+		font-weight: 500;
+		white-space: nowrap;
+		margin-bottom: 10px;
+	}
+	p {
+		color: $primaryDarkColor;
+	}
+}
+.usp__card-grid-container {
+	width: 400px;
+	height: 150px;
+	@include respond(tab-port) {
+		width: 260px;
+		height: 200px;
+	}
+	@include respond(mobile) {
+		width: 250px;
+		height: 210px;
+	}
+	display: grid;
+	grid-template-columns: 1fr 4fr;
+	gap: 20px;
+}
+
+.usp__image-container {
+	img {
+		border: 2px solid $lightGrey;
+		border-radius: 50%;
+		padding: 10px;
+		width: 70px;
+		height: 70px;
+	}
+}

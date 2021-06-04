@@ -24,3 +24,26 @@ export const carouselSliderData = [
 		id: 3,
 	},
 ];
+
+export const uspData = [
+	{
+		image: require("./assets/usp/usp-icon-seat.svg").default,
+		title: "Reclinable seats",
+		id: 0,
+	},
+	{
+		image: require("./assets/usp/usp-icon-foot-massage.svg").default,
+		title: "Foot massage",
+		id: 1,
+	},
+	{
+		image: require("./assets/usp/usp-icon-suitecase.svg").default,
+		title: "Free cabin luggage",
+		id: 2,
+	},
+	{
+		image: require("./assets/usp/usp-icon-friendly-crew.svg").default,
+		title: "Friendly crew",
+		id: 3,
+	},
+];

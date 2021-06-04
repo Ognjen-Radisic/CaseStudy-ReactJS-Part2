@@ -1,11 +1,16 @@
 import React from "react";
-import Hero from "../components/hero";
+
+//components
 import Navbar from "../components/navbar";
+import Hero from "../components/hero";
+import Usp from "../components/usp";
+
 const Home = () => {
 	return (
 		<>
 			<Navbar />
 			<Hero />
+			<Usp />
 		</>
 	);
 };

@@ -8,7 +8,8 @@ import arrowRight from "../../assets/hero/icons/icon-arrow-to-right.svg";
 
 const Hero = () => {
 	//local state
-	const [itemsCount, setItemsCount] = useState(carouselSliderData.length);
+	// const [itemsCount, setItemsCount] = useState(carouselSliderData.length);
+	const itemsCount = carouselSliderData.length;
 	const [sectionIndex, setSectionIndex] = useState(0);
 
 	//reference to slider

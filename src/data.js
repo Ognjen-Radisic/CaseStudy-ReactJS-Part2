@@ -47,3 +47,30 @@ export const uspData = [
 		id: 3,
 	},
 ];
+
+export const offersData = [
+	{
+		city: "London",
+		price: 69,
+		image: require("./assets/offers/offer-london.jpg").default,
+		id: 0,
+	},
+	{
+		city: "Lima",
+		price: 589,
+		image: require("./assets/offers/offer-lima.jpg").default,
+		id: 1,
+	},
+	{
+		city: "Tokyo",
+		price: 469,
+		image: require("./assets/offers/offer-tokyo.jpg").default,
+		id: 2,
+	},
+	{
+		city: "Honolulu",
+		price: 2299,
+		image: require("./assets/offers/offer-honolulu.jpg").default,
+		id: 3,
+	},
+];

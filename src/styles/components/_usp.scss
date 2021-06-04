@@ -30,7 +30,7 @@
 .usp__grid-container {
 	display: grid;
 	grid-template-columns: repeat(2, 400px);
-	@include respond(tab-port) {
+	@include respond(tab-land) {
 		grid-template-columns: repeat(2, 260px);
 	}
 	@include respond(mobile) {
@@ -51,7 +51,7 @@
 .usp__card-grid-container {
 	width: 400px;
 	height: 150px;
-	@include respond(tab-port) {
+	@include respond(tab-land) {
 		width: 260px;
 		height: 200px;
 	}

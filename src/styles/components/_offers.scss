@@ -102,7 +102,7 @@
 // ---------------------------FOR TABLET--------------------------//
 //================================================================//
 
-@media (max-width: $tabletWidthLand) {
+@media (max-width: $tabletWidthPort) {
 	.offers__grid-container {
 		grid-template-columns: repeat(1, 400px);
 	}

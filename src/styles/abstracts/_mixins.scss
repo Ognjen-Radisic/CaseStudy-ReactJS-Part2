@@ -30,6 +30,14 @@
 	left: 0;
 }
 
+@mixin strechAbsolute {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
 @mixin centerAbsolute {
 	position: absolute;
 	top: 50%;
@@ -50,10 +58,9 @@
 // MEDIA QUERY MANAGER
 
 /*
-0 - 600px:      Phone
+0 - 600px:      Mobile
 600 - 900px:    Tablet portrait
 900 - 1200px:   Tablet landscape
-[1200 - 1800] is where our normal styles apply
 
 
 
@@ -61,23 +68,17 @@ $breakpoint arguement choices:
 - phone
 - tab-port
 - tab-land
-- big-desktop
 */
 
 @mixin respond($breakpoint) {
 	@if $breakpoint == mobile {
 		@media only screen and (max-width: $mobileWidth) {
 			@content;
-		} //600px
+		}
 	}
 	@if $breakpoint == tab-port {
 		@media only screen and (max-width: $tabletWidth) {
 			@content;
-		} //750px
-	}
-	@if $breakpoint == tab-land {
-		@media only screen and (max-width: 75em) {
-			@content;
-		} //1200px
+		}
 	}
 }

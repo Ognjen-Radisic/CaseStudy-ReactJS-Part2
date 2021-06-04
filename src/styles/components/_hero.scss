@@ -1,0 +1,116 @@
+.hero__container {
+	width: 100%;
+	min-width: $minWidth;
+}
+
+.hero__carousel {
+	height: 550px;
+	position: relative; //relative for carousel left and right button
+	overflow: hidden;
+}
+
+.hero__slider {
+	display: flex;
+	height: 100%;
+	transition: $mainTransition;
+
+	section {
+		position: relative; //relative for one specific hero item
+		img {
+			height: 100%;
+			object-fit: cover;
+			z-index: -10;
+		}
+	}
+}
+
+//style left section of the slider
+.hero-item-about {
+	@include strechAbsolute(); //absolute towards one section of the carousel
+	max-width: $fullWidth;
+	min-width: $minWidth;
+	margin: auto;
+	z-index: 99;
+	color: $mainWhite;
+	.hero__left-container-about {
+		// background: darkorange;
+		position: absolute;
+		width: 300px;
+		top: 30%;
+		left: 5%;
+		z-index: 99;
+
+		@include respond(mobile) {
+			top: 10%;
+		}
+
+		h2 {
+			line-height: 35px;
+		}
+
+		button {
+			padding: 10px 30px;
+			border: none;
+			font-size: $fontM;
+			color: $mainWhite;
+			font-weight: 700;
+			cursor: pointer;
+			transition: $mainTransition;
+			background: $primaryColor;
+
+			&:hover {
+				background: $primaryDarkColor;
+			}
+		}
+		.decimals {
+			font-size: 0.6em;
+			font-weight: normal;
+			vertical-align: baseline;
+			top: -0.4em;
+			position: relative;
+		}
+	}
+}
+
+//buttons for carousel
+.hero__controls {
+	position: absolute; //absolute towards whole carousel
+	// background: darkcyan;
+	max-width: $fullWidth;
+	min-width: $minWidth;
+	top: 35%;
+	left: 0;
+	right: 0;
+	bottom: 55%;
+	margin: auto;
+	z-index: 200;
+
+	@include respond(mobile) {
+		top: 85%;
+		bottom: 5%;
+	}
+	.hero__arrow {
+		position: absolute;
+		cursor: pointer;
+		z-index: 1000; //always at the top
+	}
+	button {
+		background: none;
+		border-radius: 50%;
+		padding: 10px;
+		border: 1px solid $lightGrey;
+		img {
+			width: 30px;
+			height: 30px;
+			color: $mainWhite;
+		}
+	}
+}
+
+.hero__left-a {
+	right: 120px;
+	display: none;
+}
+.hero__right-a {
+	right: 50px;
+}

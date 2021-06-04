@@ -47,19 +47,22 @@
 		h2 {
 			line-height: 35px;
 		}
+		p {
+			font-size: $fontM;
+		}
 
 		button {
-			padding: 8px 24px;
+			padding: 8px 24px 10px 24px;
 			border: none;
-			font-size: $fontML;
+			font-size: $fontM;
 			color: $mainWhite;
-			font-weight: 600;
+			font-weight: 700;
 			cursor: pointer;
 			transition: $mainTransition;
 			background: $primaryColor;
 
 			&:hover {
-				background: $primaryDarkColor;
+				background: $primaryLightColor;
 			}
 		}
 		.decimals {

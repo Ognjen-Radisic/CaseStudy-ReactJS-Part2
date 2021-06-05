@@ -1,5 +1,5 @@
 import React from "react";
-
+import PropTypes from "prop-types";
 const OneUsp = ({ usp }) => {
 	return (
 		<article className="usp__card-grid-container">
@@ -18,3 +18,7 @@ const OneUsp = ({ usp }) => {
 };
 
 export default OneUsp;
+
+OneUsp.propTypes = {
+	usp: PropTypes.object.isRequired,
+};

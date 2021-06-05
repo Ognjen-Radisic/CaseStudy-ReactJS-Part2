@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import arrowRight from "../../assets/hero/icons/icon-arrow-to-right.svg";
 
 const RightButton = ({ sectionIndex, setSectionIndex, itemsCount }) => {
@@ -17,3 +18,9 @@ const RightButton = ({ sectionIndex, setSectionIndex, itemsCount }) => {
 };
 
 export default RightButton;
+
+RightButton.propTypes = {
+	sectionIndex: PropTypes.number.isRequired,
+	setSectionIndex: PropTypes.func.isRequired,
+	itemsCount: PropTypes.number.isRequired,
+};

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import {
 	getWholeNum,
 	getDecimalNum,
@@ -34,3 +35,8 @@ const OneCarouselSlider = ({ carousel, currency }) => {
 };
 
 export default OneCarouselSlider;
+
+OneCarouselSlider.propTypes = {
+	carousel: PropTypes.object.isRequired,
+	currency: PropTypes.string.isRequired,
+};

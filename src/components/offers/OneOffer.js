@@ -1,4 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
+
+//helper import
 import { getWholeNum } from "../sharedComponents/helperFunctions";
 import { currencyData } from "../../contexts/currencyData";
 
@@ -32,3 +35,8 @@ const OneOffer = ({ offer, currency }) => {
 };
 
 export default OneOffer;
+
+OneOffer.propTypes = {
+	offer: PropTypes.object.isRequired,
+	currency: PropTypes.string.isRequired,
+};

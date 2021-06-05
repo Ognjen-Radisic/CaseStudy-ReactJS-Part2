@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import arrowLeft from "../../assets/hero/icons/icon-arrow-to-left.svg";
 
 const LeftButton = ({ sectionIndex, setSectionIndex }) => {
@@ -13,3 +14,8 @@ const LeftButton = ({ sectionIndex, setSectionIndex }) => {
 };
 
 export default LeftButton;
+
+LeftButton.propTypes = {
+	sectionIndex: PropTypes.number.isRequired,
+	setSectionIndex: PropTypes.func.isRequired,
+};

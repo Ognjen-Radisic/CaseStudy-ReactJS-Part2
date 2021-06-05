@@ -2,10 +2,9 @@ import React, { useRef, useState, useEffect } from "react";
 import { carouselSliderData } from "../../data";
 import OneCarouselSlider from "./OneCarouselSlider";
 
-//button icon arrows
-import arrowLeft from "../../assets/hero/icons/icon-arrow-to-left.svg";
-import arrowRight from "../../assets/hero/icons/icon-arrow-to-right.svg";
 import { GlobalContext } from "../../contexts/CurrencyContext";
+import LeftButton from "./LeftButton";
+import RightButton from "./RightButton";
 
 const Hero = () => {
 	const { curCurrency } = GlobalContext();
@@ -43,24 +42,8 @@ const Hero = () => {
 						})}
 					</div>
 					<div className="hero__controls">
-						<button
-							className="hero__arrow hero__left-a"
-							onClick={() => setSectionIndex(sectionIndex - 1)}
-							style={
-								sectionIndex > 0 ? { display: "block" } : { display: "none" }
-							}>
-							<img src={arrowLeft} alt="prev" />
-						</button>
-						<button
-							className="hero__arrow hero__right-a"
-							onClick={() => setSectionIndex(sectionIndex + 1)}
-							style={
-								sectionIndex < itemsCount - 1
-									? { display: "block" }
-									: { display: "none" }
-							}>
-							<img src={arrowRight} alt="next" />
-						</button>
+						<LeftButton {...{ sectionIndex, setSectionIndex }} />
+						<RightButton {...{ sectionIndex, setSectionIndex, itemsCount }} />
 					</div>
 				</div>
 			</div>

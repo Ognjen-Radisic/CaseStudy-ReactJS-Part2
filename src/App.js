@@ -1,4 +1,4 @@
-import { AppProvider } from "./contexts/CurrencyContext";
+import { AppProvider } from "./contexts/AppContext";
 import Home from "./pages/Home";
 import "./styles/main.scss";
 

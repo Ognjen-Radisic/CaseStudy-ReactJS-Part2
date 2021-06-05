@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { carouselSliderData } from "../../data";
 import OneCarouselSlider from "./OneCarouselSlider";
 
-import { GlobalContext } from "../../contexts/CurrencyContext";
+import { GlobalContext } from "../../contexts/AppContext";
 import LeftButton from "./LeftButton";
 import RightButton from "./RightButton";
 

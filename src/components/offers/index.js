@@ -1,5 +1,5 @@
 import React from "react";
-import { GlobalContext } from "../../contexts/CurrencyContext";
+import { GlobalContext } from "../../contexts/AppContext";
 import { offersData } from "../../data";
 import OneOffer from "./OneOffer";
 

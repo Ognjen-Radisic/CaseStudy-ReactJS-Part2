@@ -1,19 +1,21 @@
 import React, { useContext, useState } from "react";
 
-const CurrencyContext = React.createContext();
+const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
 	const [curCurrency, setCurCurrency] = useState("pound");
+	const [activeTab, setActiveTab] = useState("regular");
 
 	return (
-		<CurrencyContext.Provider value={{ curCurrency, setCurCurrency }}>
+		<AppContext.Provider
+			value={{ curCurrency, setCurCurrency, activeTab, setActiveTab }}>
 			{children}
-		</CurrencyContext.Provider>
+		</AppContext.Provider>
 	);
 };
 
 const GlobalContext = () => {
-	return useContext(CurrencyContext);
+	return useContext(AppContext);
 };
 
 export { AppProvider, GlobalContext };

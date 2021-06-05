@@ -1,6 +1,6 @@
 import React from "react";
 import flagImg from "../../assets/navbar/icon-united-kingdom.svg";
-import { GlobalContext } from "../../contexts/CurrencyContext";
+import { GlobalContext } from "../../contexts/AppContext";
 
 const LoginCurrency = () => {
 	const { curCurrency, setCurCurrency } = GlobalContext();

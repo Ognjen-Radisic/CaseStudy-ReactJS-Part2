@@ -24,7 +24,9 @@ const OneCarouselSlider = ({ carousel, currency }) => {
 							{getDecimalNum(carousel.price, currencyData[currency].coeficient)}
 						</span>
 					</p>
-					<button>Book now!</button>
+					<a href="#offersPage">
+						<button>Book now!</button>
+					</a>
 				</div>
 			</div>
 		</section>

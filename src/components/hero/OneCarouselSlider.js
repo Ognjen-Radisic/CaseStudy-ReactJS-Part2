@@ -7,7 +7,7 @@ import {
 import { currencyData } from "../../contexts/currencyData";
 
 const OneCarouselSlider = ({ carousel, currency }) => {
-	console.log(currencyData[currency].value);
+	// console.log(currencyData[currency].value);
 	return (
 		<section className="hero-item">
 			<img src={carousel.image} alt="carousel-slide" />

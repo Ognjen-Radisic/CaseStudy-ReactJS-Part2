@@ -2,12 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import ItemHeader from "./ItemHeader";
 import { tabsInfo } from "../../data";
+import { GlobalContext } from "../../contexts/AppContext";
 
 const OneTab = ({ tab }) => {
+	const { activeTab } = GlobalContext();
 	return (
 		<div
 			className={`tab-classes__tab-pane  ${
-				tab.type === "regular" ? "active" : ""
+				tab.type === activeTab ? "active" : ""
 			}`}
 			id={tab.type}>
 			<div className="tab-classes__image-container">

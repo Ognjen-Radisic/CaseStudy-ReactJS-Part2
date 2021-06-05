@@ -5,8 +5,11 @@ import OneCarouselSlider from "./OneCarouselSlider";
 //button icon arrows
 import arrowLeft from "../../assets/hero/icons/icon-arrow-to-left.svg";
 import arrowRight from "../../assets/hero/icons/icon-arrow-to-right.svg";
+import { GlobalContext } from "../../contexts/CurrencyContext";
 
 const Hero = () => {
+	const { curCurrency } = GlobalContext();
+
 	//local state
 	// const [itemsCount, setItemsCount] = useState(carouselSliderData.length);
 	const itemsCount = carouselSliderData.length;
@@ -30,7 +33,13 @@ const Hero = () => {
 						className="hero__slider"
 						style={{ width: `${100 * itemsCount}%` }}>
 						{carouselSliderData.map((slide) => {
-							return <OneCarouselSlider key={slide.id} carousel={slide} />;
+							return (
+								<OneCarouselSlider
+									key={slide.id}
+									carousel={slide}
+									currency={curCurrency}
+								/>
+							);
 						})}
 					</div>
 					<div className="hero__controls">

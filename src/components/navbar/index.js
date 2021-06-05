@@ -1,8 +1,14 @@
 import React from "react";
 import logoImg from "../../assets/navbar/icon-logo.svg";
 import flagImg from "../../assets/navbar/icon-united-kingdom.svg";
+import { GlobalContext } from "../../contexts/CurrencyContext";
 
 const Navbar = () => {
+	const { curCurrency, setCurCurrency } = GlobalContext();
+	const changeCurrency = (e) => {
+		setCurCurrency(e.target.value);
+	};
+
 	return (
 		<>
 			<nav className="nav">
@@ -40,7 +46,10 @@ const Navbar = () => {
 									<span className="nav__full-text">EN - UK</span>
 								</a>
 
-								<select className="nav__options-menu">
+								<select
+									className="nav__options-menu"
+									value={curCurrency}
+									onChange={changeCurrency}>
 									<option value="pound">( £ )</option>
 									<option value="dolar">( $ )</option>
 									<option value="euro">( € )</option>

@@ -1,6 +1,10 @@
 import React from "react";
+import { tabsData } from "../../data";
+
+//components
 import Tabs from "./Tabs";
 import TitleWithParagraphs from "./TitleWithParagraphs";
+import OneTab from "./OneTab";
 
 const TabClasess = () => {
 	return (
@@ -17,7 +21,11 @@ const TabClasess = () => {
 					<Tabs />
 
 					{/* -- Tab panes -- */}
-					<div className="tab-classes__tab-content">{}</div>
+					<div className="tab-classes__tab-content">
+						{tabsData.map((tab) => {
+							return <OneTab key={tab.id} tab={tab} />;
+						})}
+					</div>
 				</div>
 
 				{/* -- MOBILE TABS CONTAINER CARDS -- */}

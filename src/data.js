@@ -74,3 +74,48 @@ export const offersData = [
 		id: 3,
 	},
 ];
+
+export const tabsData = [
+	{
+		type: "regular",
+		image: require("./assets/tabClasses/tabs-travel-person.jpg").default,
+		first: "primary",
+		second: "primary",
+		third: "primary",
+		fourth: "secondary",
+		fifth: "secondary",
+		sixth: "secondary",
+		id: 0,
+	},
+	{
+		type: "plus",
+		image: require("./assets/tabClasses/tabs-travel-person.jpg").default,
+		first: "primary",
+		second: "primary",
+		third: "primary",
+		fourth: "primary",
+		fifth: "primary",
+		sixth: "secondary",
+		id: 1,
+	},
+	{
+		type: "premium",
+		image: require("./assets/tabClasses/tabs-travel-person.jpg").default,
+		first: "primary",
+		second: "primary",
+		third: "primary",
+		fourth: "primary",
+		fifth: "primary",
+		sixth: "primary",
+		id: 2,
+	},
+];
+
+export const tabsInfo = {
+	first: "Reclinable seats",
+	second: "1 Hand luggage",
+	third: "Extra leg room",
+	fourth: "Extra cabbin luggage",
+	fifth: "Extra hold luggage",
+	sixth: "Lounge access",
+};

@@ -6,6 +6,7 @@ import Hero from "../components/hero";
 import Usp from "../components/usp";
 import Offers from "../components/offers";
 import Inspiration from "../components/inspiration";
+import TabClasses from "../components/tabClasses";
 
 const Home = () => {
 	return (
@@ -15,6 +16,7 @@ const Home = () => {
 			<Usp />
 			<Offers />
 			<Inspiration />
+			<TabClasses />
 		</>
 	);
 };

@@ -5,13 +5,18 @@
 .tab-classes__container {
 	@include container();
 	@include flexVariant(space-between);
+	max-width: 1060px;
 	flex-direction: column;
-	padding: 30px 20px;
+	padding: 60px 20px 80px 20px;
 
 	//for accesibility optimization it should be h2 in markup
 	h4 {
 		color: $primaryLightColor;
-		font-size: $fontXXL;
+		font-size: $fontXXXL;
+
+		@include respond(mobile) {
+			font-size: $fontXL;
+		}
 	}
 }
 
@@ -31,11 +36,8 @@
 	}
 	.tab-classes__above-title-paragraph {
 		font-size: $fontS;
+		text-transform: uppercase;
 	}
-}
-
-.tab-classes__above-title-paragraph {
-	text-transform: uppercase;
 }
 
 //==========================================================================//
@@ -46,16 +48,22 @@
 	@include flexVariant(flex-end);
 	padding-bottom: 15px;
 	width: 100%;
+
+	@include respond(mobile) {
+		@include flexVariant(center);
+	}
+
 	p {
 		color: $primaryLightColor;
 		margin-bottom: 0;
 		border-bottom: 2px dashed $primaryLightColor;
 		cursor: pointer;
 		transition: $mainTransition;
-	}
-	p:hover {
-		color: $mainWhite;
-		border-bottom: 2px dashed $mainWhite;
+
+		&:hover {
+			color: $mainWhite;
+			border-bottom: 2px dashed $mainWhite;
+		}
 	}
 }
 
@@ -66,6 +74,10 @@
 .tab-classes__bottom-container {
 	width: 100%;
 	background-color: $mainWhite;
+
+	@include respond(mobile) {
+		display: none;
+	}
 }
 
 .tab-classes__unordered-list {
@@ -76,9 +88,10 @@
 		height: 60px;
 		border-left: 1px solid $mainGrey;
 		cursor: pointer;
-	}
-	li:first-child {
-		border-left: none;
+
+		&:first-child {
+			border-left: none;
+		}
 	}
 }
 
@@ -89,17 +102,18 @@
 		height: 100%;
 		color: $darkGrey;
 		font-weight: 400;
-		font-size: $fontL;
+		font-size: $fontLL;
 	}
-}
 
-.tab-classes__list-item.active {
-	background-color: $mainWhite;
-	a {
-		color: $primaryColor;
-		font-weight: 700;
-		border-top: 4px solid $primaryLightColor;
-		padding-bottom: 4px;
+	//when we click on the tab
+	&.active {
+		background-color: $mainWhite;
+		a {
+			color: $primaryColor;
+			font-weight: 700;
+			border-top: 4px solid $primaryLightColor;
+			padding-bottom: 4px;
+		}
 	}
 }
 
@@ -117,32 +131,47 @@
 
 //===================BOTTOM CONTAINER / TAB-CONTENT=========================//
 
-.tab-classes__tab-pane.active {
-	display: grid;
-	grid-template-columns: 1fr 2fr;
-	height: 250px;
-	img {
-		width: 150px;
-		height: 150px;
-		border-radius: 50%;
-	}
-}
-
 .tab-classes__tab-pane {
 	display: none;
+
+	&.active {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		height: 250px;
+		img {
+			width: 170px;
+			height: 170px;
+			border-radius: 50%;
+		}
+	}
 }
 
 .tab-classes__image-container {
 	@include flexVariant(center);
 }
 
+.tab-classes__tab-content {
+	padding-right: 20px;
+}
+
 .tab-classes__include-text {
 	@include flexVariant(flex-start);
 	padding-top: 40px;
+	h6 {
+		font-size: $fontM;
+		@include respond(tab-port) {
+			font-size: $fontMS;
+		}
+	}
 }
 
 .tab-classes__include-text__left-container {
-	margin-right: 50px;
+	margin-right: 100px;
+	margin-left: 30px;
+	@include respond(tab-port) {
+		margin-right: 25px;
+		margin-left: 10px;
+	}
 }
 
 .tab-classes__span-img {
@@ -161,11 +190,20 @@
 .tab-classes__bottom-container-mobile {
 	display: none;
 
+	@include respond(mobile) {
+		display: grid;
+		grid-template-rows: 1fr 1fr;
+		row-gap: 20px;
+		img {
+			height: 150px;
+		}
+	}
+
 	article {
+		@include mobileContainer();
 		display: grid;
 		grid-template-rows: 1fr 0.3fr 4fr;
 		padding: 20px 25px;
-		@include mobileContainer();
 		background-color: $mainWhite;
 		border-top: 5px solid $primaryColor;
 		img {
@@ -190,30 +228,6 @@
 				height: 15px !important;
 				margin-bottom: -3px !important;
 			}
-		}
-	}
-}
-//==========================================================================//
-
-@media (max-width: $mobileWidth) {
-	//for accesibility optimization it should be h2 in markup
-	.tab-classes__container {
-		h4 {
-			font-size: $fontXL;
-		}
-	}
-	.tab-classes__mid-container {
-		@include flexVariant(center);
-	}
-	.tab-classes__bottom-container {
-		display: none;
-	}
-	.tab-classes__bottom-container-mobile {
-		display: grid;
-		grid-template-rows: 1fr 1fr;
-		row-gap: 20px;
-		img {
-			height: 150px;
 		}
 	}
 }

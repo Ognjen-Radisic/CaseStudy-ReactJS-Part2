@@ -5,6 +5,7 @@
 .offers__container {
 	@include container();
 	@include flexVariant(space-between);
+	max-width: 1140px;
 	flex-direction: column;
 	padding: 55px;
 }
@@ -19,7 +20,7 @@
 .offers__grid-container {
 	display: grid;
 	grid-template-columns: repeat(4, $cardWidth);
-	column-gap: 30px;
+	column-gap: 20px;
 	row-gap: 20px;
 }
 

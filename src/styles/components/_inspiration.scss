@@ -8,10 +8,7 @@
 	h3 {
 		margin-bottom: 0;
 		white-space: nowrap;
-		font-size: $fontXXL;
-		@include respond(tab-land) {
-			font-size: $fontXL;
-		}
+		font-size: $fontXL;
 		@include respond(mobile) {
 			font-size: $fontL;
 		}

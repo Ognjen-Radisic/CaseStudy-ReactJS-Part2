@@ -1,6 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+//animation on scroll
+import Aos from "aos";
+import "aos/dist/aos.css";
+
 //components
 import ItemHeader from "./ItemHeader";
 
@@ -9,8 +13,11 @@ import { tabsInfo } from "../../data";
 import { capitalizeFirstLetter } from "../sharedComponents/helperFunctions";
 
 const OneTabMobile = ({ tab }) => {
+	React.useEffect(() => {
+		Aos.init({ duration: 1500 });
+	}, []);
 	return (
-		<article>
+		<article data-aos="flip-left" data-aos-anchor-placement="top-bottom">
 			<div className="tab-classes__image-container">
 				<img src={tab.image} alt="tab-card-mobile" />
 			</div>

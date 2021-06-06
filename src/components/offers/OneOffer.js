@@ -1,13 +1,41 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
+
+//animation on scroll
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 //helper import
 import { getWholeNum } from "../sharedComponents/helperFunctions";
 import { currencyData } from "../../contexts/currencyData";
 
 const OneOffer = ({ offer, currency }) => {
+	//added this logic if we want to animate on scroll more then once
+	//just remove property "once" from Aos.init object
+	const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+	const handleResize = () => {
+		setScreenWidth(window.innerWidth);
+	};
+
+	useEffect(() => {
+		window.addEventListener("resize", handleResize);
+
+		return () => {
+			window.removeEventListener("resize", handleResize);
+		};
+	});
+	//=============================================================//
+
+	useEffect(() => {
+		Aos.init({ once: true, duration: 1500 });
+	}, []);
 	return (
-		<article className="offers__card-container">
+		<article
+			className="offers__card-container"
+			data-aos="flip-left"
+			data-aos-delay={`${screenWidth > 1170 ? 500 * offer.id : 0}`}
+			data-aos-anchor-placement="top-bottom">
 			<img src={offer.image} alt="offer" />
 			<div className="offers__offer-text">
 				<h4>{offer.city}</h4>

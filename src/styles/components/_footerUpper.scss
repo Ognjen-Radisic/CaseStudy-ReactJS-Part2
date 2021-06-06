@@ -4,7 +4,7 @@
 
 .footer-upper__container {
 	@include flexVariant(space-between);
-	max-width: 1400px;
+	max-width: $footerWidth;
 	min-width: $minWidth;
 	width: 100%;
 	margin: 0 auto;

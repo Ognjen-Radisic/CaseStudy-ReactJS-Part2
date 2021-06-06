@@ -8,6 +8,7 @@ import Offers from "../components/offers";
 import Inspiration from "../components/inspiration";
 import TabClasses from "../components/tabClasses";
 import FooterUpper from "../components/footerUpper";
+import FooterLower from "../components/footerLower";
 
 const Home = () => {
 	return (
@@ -19,6 +20,7 @@ const Home = () => {
 			<Inspiration />
 			<TabClasses />
 			<FooterUpper />
+			<FooterLower />
 		</>
 	);
 };

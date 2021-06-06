@@ -5,6 +5,7 @@ import { tabsData } from "../../data";
 import Tabs from "./Tabs";
 import TitleWithParagraphs from "./TitleWithParagraphs";
 import OneTab from "./OneTab";
+import OneTabMobile from "./OneTabMobile";
 
 const TabClasess = () => {
 	return (
@@ -16,7 +17,7 @@ const TabClasess = () => {
 					<p>View all services & upgrades</p>
 				</a>
 
-				{/* -- Tabs component -- */}
+				{/* -- Tabs component (invisible in mobile view)-- */}
 				<div className="tab-classes__bottom-container">
 					<Tabs />
 
@@ -29,7 +30,11 @@ const TabClasess = () => {
 				</div>
 
 				{/* -- MOBILE TABS CONTAINER CARDS -- */}
-				<div className="tab-classes__bottom-container-mobile">{}</div>
+				<div className="tab-classes__bottom-container-mobile">
+					{tabsData.map((tab) => {
+						return <OneTabMobile key={tab.id} tab={tab} />;
+					})}
+				</div>
 			</div>
 		</div>
 	);

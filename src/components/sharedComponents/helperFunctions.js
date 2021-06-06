@@ -12,3 +12,7 @@ export const getDecimalNum = (num1, num2) => {
 	//return decimal with zero added as a string
 	return stringDec + "0";
 };
+
+export const capitalizeFirstLetter = (string) => {
+	return string.charAt(0).toUpperCase() + string.slice(1);
+};

@@ -7,12 +7,18 @@
 	@include flexVariant(space-between);
 	max-width: 1060px;
 	flex-direction: column;
-	padding: 60px 20px 80px 20px;
+	padding: 50px 20px 80px 20px;
+
+	@include respond(mobile) {
+		padding: 50px 20px;
+	}
 
 	//for accesibility optimization it should be h2 in markup
 	h4 {
 		color: $primaryLightColor;
 		font-size: $fontXXXL;
+		line-height: 1.1;
+		margin-bottom: 20px;
 
 		@include respond(mobile) {
 			font-size: $fontXL;
@@ -30,9 +36,16 @@
 	margin: 0 auto;
 	margin-bottom: 40px;
 	text-align: center;
+
+	@include respond(mobile) {
+		margin-bottom: 10px;
+	}
 	p {
 		color: $mainWhite;
 		margin-bottom: 0;
+		@include respond(mobile) {
+			margin-bottom: 5px;
+		}
 	}
 	.tab-classes__above-title-paragraph {
 		font-size: $fontS;
@@ -46,11 +59,12 @@
 
 .tab-classes__mid-container {
 	@include flexVariant(flex-end);
-	padding-bottom: 15px;
+	margin-bottom: 15px;
 	width: 100%;
 
 	@include respond(mobile) {
 		@include flexVariant(center);
+		margin-bottom: 40px;
 	}
 
 	p {
@@ -193,10 +207,7 @@
 	@include respond(mobile) {
 		display: grid;
 		grid-template-rows: 1fr 1fr;
-		row-gap: 20px;
-		img {
-			height: 150px;
-		}
+		row-gap: 40px;
 	}
 
 	article {

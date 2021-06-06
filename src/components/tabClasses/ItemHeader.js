@@ -23,6 +23,6 @@ const ItemHeader = ({ priority, textContent }) => {
 export default ItemHeader;
 
 ItemHeader.propTypes = {
-	priority: PropTypes.string.isRequired,
+	priority: PropTypes.oneOf(["primary", "secondary"]),
 	textContent: PropTypes.string.isRequired,
 };

@@ -2,29 +2,25 @@
 	@include flexVariant(space-between);
 	@include container();
 	flex-direction: column;
-	padding-bottom: 40px;
-
-	//for accesibility optimization it should be h2 in markup
-	//title
-	h3 {
-		font-size: $fontXXL;
-		@include respond(mobile) {
-			font-size: $fontXL;
-		}
-	}
+	padding: 40px 20px 30px 20px;
 }
 
 .usp__paragraph {
 	text-transform: uppercase;
-	margin-top: 30px;
+	margin: 0px;
 	color: $darkGrey;
-	word-wrap: break-word;
+	white-space: nowrap;
 }
+
 .usp__title {
 	color: $primaryColor;
 	text-align: center;
-	margin-bottom: 70px;
-	padding: 0 40px;
+	margin-bottom: 60px;
+	font-size: $fontXXXL;
+	@include respond(mobile) {
+		margin-bottom: 50px;
+		font-size: $fontXXL;
+	}
 }
 
 .usp__grid-container {
@@ -48,6 +44,7 @@
 		color: $primaryDarkColor;
 	}
 }
+
 .usp__card-grid-container {
 	width: 400px;
 	height: 150px;
@@ -65,11 +62,23 @@
 }
 
 .usp__image-container {
-	img {
-		border: 2px solid $lightGrey;
-		border-radius: 50%;
-		padding: 10px;
-		width: 70px;
-		height: 70px;
+	position: relative;
+	width: 72px;
+	height: 72px;
+	margin-top: 5px;
+}
+
+.usp__svg-circle {
+	@include svgCircle();
+	width: 74px;
+	height: 74px;
+	circle {
+		stroke: rgba(201, 206, 201, 0.467);
 	}
+}
+
+.usp__img {
+	@include centerAbsolute();
+	width: 40px;
+	height: 40px;
 }
